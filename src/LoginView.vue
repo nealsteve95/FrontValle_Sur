@@ -19,15 +19,15 @@
           <p class="switch__description description">
             Gracias por trabajar con nosotros
           </p>
+          <div id="messageApi">{{ $store.state.errors }}</div>
         </div>
-        <div class="footer" id="messages">{{ this.errors }}</div>
       </div>
       <div class="switch__container form-parent">
         <img class="user" src="@/assets/usuario.png" />
         <form class="form" @submit.prevent="login">
           <h2 class="form_title title">Iniciar Sesión</h2>
           <input
-            class="form__input"
+            class="form__input input"
             type="email"
             placeholder="Correo"
             v-model="formData.email"
@@ -35,7 +35,7 @@
             required
           />
           <input
-            class="form__input"
+            class="form__input input"
             type="password"
             placeholder="Contraseña"
             v-model="formData.password"
@@ -49,28 +49,26 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+
 export default {
   
   name: "LoginView",
-  data() {
-    return {
-      formData: {  
-        email: '',
-        password: '',
-        device_name: 'browser'
-      },
-      errors: {}
-    }
-  },
-  methods: {
-    login() {
-      axios.post('http://127.0.0.1:8000/api/login', this.formData)
-      .then(data=>{console.log(data.data);});
+  data: () => ({
+    formData: {  
+      email: '',
+      password: '',
+    },
+    log: {}
+  }),
+  methods: {  
+    async login() {
+      await this.$store.dispatch('login', this.formData);
+      this.$router.push('/about');
     }
   }
 };
 </script>
+
 <style>
-    @import url("@/css/login.css");
+  @import url('./css/login.css');
 </style>
