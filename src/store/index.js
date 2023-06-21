@@ -45,7 +45,7 @@ export default createStore({
     },
     setErrors({ commit }, errors) {
       commit('SET_ERRORS', errors);
-    }
+    },
   },
   modules: {
   }

@@ -7,7 +7,7 @@ import store from '../store'
 
 const homePageUsers = {
   gerente: '/gerente',
-  recepcionista: 'recepcionista',
+  recepcionista: '/recepcionista',
 }
 
 function isAuth() {
@@ -18,7 +18,8 @@ function getHomeUser() {
 }
 
 /**
- * Rutas protegidas: meta 'requireAuth'
+ * Rutas protegidas por autenticación:  meta 'requireAuth'  -> boolean
+ * Rutas protegidas por rol:            meta 'authRole'     -> string
  */
 const routes = [
   {
@@ -49,9 +50,10 @@ const routes = [
     meta: { requireAuth: true, authRole: 'gerente'},
     children: [
       {
-        path: '/',
+        path: '',
+        name: 'gerente-home',
         component: AboutGerente,
-      }
+      },
     ]
   },
   {
@@ -60,7 +62,8 @@ const routes = [
     meta: { requireAuth: true, authRole: 'recepcionista'},
     children: [
       {
-        path: '/',
+        path: '',
+        name: 'recepcionista-home',
         component: AboutRecep,
       }
     ]

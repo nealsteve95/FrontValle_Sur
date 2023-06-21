@@ -8,7 +8,7 @@
 </template>
 <script>
     export default {
-        name: 'aboutGerente',
+        name: 'AboutGerente',
         methods: {
             async logout() {
                 await this.$store.dispatch('logout');

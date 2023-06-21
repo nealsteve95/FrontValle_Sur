@@ -189,3 +189,7 @@ body {
     display: flex;
   }
 }
+
+#messageApi {
+  display: flex;
+}

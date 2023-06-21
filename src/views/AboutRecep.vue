@@ -10,7 +10,7 @@
         name: 'aboutRecep',
         methods: {
             async logout() {
-                await this.$route.dispatch('logout');
+                await this.$store.dispatch('logout');
                 return this.$router.push('/');
             }
         }

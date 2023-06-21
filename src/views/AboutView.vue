@@ -12,10 +12,10 @@
 <script >
   export default {
     methods: {
-            async logout() {
-                await this.$store.dispatch('logout');
-                return this.$router.push('/');
-            }
-        }
+      async logout() {
+        await this.$store.dispatch('logout');
+        return this.$router.push('/');
+      }
+    }
   }
 </script>
