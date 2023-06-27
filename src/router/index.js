@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
-import HomeGerenteView from '@/views/gerente/HomeGerentView.vue'
-import HomeRecepView from '@/views/recepcionista/HomeRecepView.vue'
 import store from '../store'
+
+import routes_recepcionista from './recepcionistas'
+import routes_gerente from './gerente'
 
 const homePageUsers = {
   gerente: '/gerente',
@@ -42,31 +43,7 @@ const routes = [
     name: 'gerente',
     meta: { requireAuth: true, authRole: 'gerente'},
     children: [
-      {
-        path: '',
-        name: 'gerente-home',
-        component: HomeGerenteView,
-      },
-      {
-        path: 'huespedes',
-        name: 'gerente-huespedes',
-      },
-      {
-        path: 'habitaciones',
-        name: 'gerente-habitaciones',
-      },
-      {
-        path: 'recepcionistas',
-        name: 'gerente-recepcionistas',
-      },
-      {
-        path: 'reportes',
-        name: 'gerente-reportes',
-      },
-      {
-        path: '',
-        name: 'gerente-create-habitacion'
-      }
+      ...routes_gerente,
     ]
   },
   {
@@ -74,35 +51,7 @@ const routes = [
     name: 'recepcionista',
     meta: { requireAuth: true, authRole: 'recepcionista'},
     children: [
-      {
-        path: '',
-        name: 'recepcionista-home',
-        component: HomeRecepView
-      },
-      {
-        path: 'huespedes',
-        name: 'recepcionista-huespedes',
-      },
-      {
-        path: 'habitaciones',
-        name: 'recepcionista-habitaciones',
-      },
-      {
-        path: 'reservas',
-        name: 'recepcionista-reservas',
-      },
-      {
-        path: 'check',
-        name: 'recepcionista-check',
-      },
-      {
-        path: 'reportes',
-        name: 'recepcionista-reportes',
-      },
-      {
-        path: 'cochera',
-        name: 'recepcionista-cochera',
-      },
+      ...routes_recepcionista,
     ]
   },
 ]
