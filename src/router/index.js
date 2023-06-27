@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import HomeGerenteView from '@/views/gerente/HomeGerentView.vue'
+import HomeRecepView from '@/views/recepcionista/HomeRecepView.vue'
 import store from '../store'
 
 const homePageUsers = {
@@ -46,6 +47,26 @@ const routes = [
         name: 'gerente-home',
         component: HomeGerenteView,
       },
+      {
+        path: 'huespedes',
+        name: 'gerente-huespedes',
+      },
+      {
+        path: 'habitaciones',
+        name: 'gerente-habitaciones',
+      },
+      {
+        path: 'recepcionistas',
+        name: 'gerente-recepcionistas',
+      },
+      {
+        path: 'reportes',
+        name: 'gerente-reportes',
+      },
+      {
+        path: '',
+        name: 'gerente-create-habitacion'
+      }
     ]
   },
   {
@@ -56,7 +77,32 @@ const routes = [
       {
         path: '',
         name: 'recepcionista-home',
-      }
+        component: HomeRecepView
+      },
+      {
+        path: 'huespedes',
+        name: 'recepcionista-huespedes',
+      },
+      {
+        path: 'habitaciones',
+        name: 'recepcionista-habitaciones',
+      },
+      {
+        path: 'reservas',
+        name: 'recepcionista-reservas',
+      },
+      {
+        path: 'check',
+        name: 'recepcionista-check',
+      },
+      {
+        path: 'reportes',
+        name: 'recepcionista-reportes',
+      },
+      {
+        path: 'cochera',
+        name: 'recepcionista-cochera',
+      },
     ]
   },
 ]

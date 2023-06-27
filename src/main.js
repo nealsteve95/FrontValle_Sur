@@ -7,5 +7,4 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 await store.dispatch('getUser');
-
 createApp(App).use(store).use(router).use().mount('#app');
