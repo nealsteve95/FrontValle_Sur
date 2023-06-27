@@ -2,7 +2,7 @@
   user-select: none;
 }
 
-body {
+.body {
   background-image: url("@/assets/background.jpg");
   background-repeat: no-repeat;
   overflow: hidden;
@@ -18,7 +18,6 @@ body {
 
 /**/
 .main {
-  background-color: #e5845f;
   border-radius: 12px;
 }
 
@@ -66,12 +65,12 @@ body {
   background-color: #ecf0f3;
 }
 
-.form-parent {
+.form_parent {
   background-color: #151e2f;
   align-items: center;
 }
 
-.form {
+.form_login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +120,7 @@ body {
   line-height: 5;
 }
 
-.button {
+.button_login {
   width: 180px;
   height: 50px;
   border-radius: 25px;
@@ -176,7 +175,7 @@ body {
     height: 100%;
     padding: 2rem 0;
   }
-  .form-parent {
+  .form_parent {
     width: 600px;
   }
   .switch__body {

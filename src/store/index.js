@@ -11,7 +11,6 @@ export default createStore({
     errors: null,
   },
   getters: { 
-
   },
   mutations: { 
     SET_USER(state, user) {

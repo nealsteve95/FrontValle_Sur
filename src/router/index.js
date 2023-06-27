@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LoginView from '../LoginView.vue'
-import AboutView from '../views/AboutView.vue'
-import AboutRecep from '../views/AboutRecep.vue'
-import AboutGerente from '../views/AboutGerente.vue'
+import LoginView from '@/views/LoginView.vue'
+import HomeGerenteView from '@/views/gerente/HomeGerentView.vue'
 import store from '../store'
 
 const homePageUsers = {
@@ -39,12 +37,6 @@ const routes = [
     }
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView,
-    meta: { requireAuth: true }
-  },
-  {
     path: '/gerente',
     name: 'gerente',
     meta: { requireAuth: true, authRole: 'gerente'},
@@ -52,7 +44,7 @@ const routes = [
       {
         path: '',
         name: 'gerente-home',
-        component: AboutGerente,
+        component: HomeGerenteView,
       },
     ]
   },
@@ -64,7 +56,6 @@ const routes = [
       {
         path: '',
         name: 'recepcionista-home',
-        component: AboutRecep,
       }
     ]
   },
